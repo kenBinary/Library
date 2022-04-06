@@ -39,3 +39,13 @@ function addAllMangaToPage() {
         content.appendChild(div);
     });
 }
+
+const addMangaButton = document.querySelector(".add-new-manga");
+addMangaButton.addEventListener('click', () => {
+    const mangaForm = document.querySelector(".manga-form");
+    if (mangaForm.classList.contains("manga-form-appear")) {
+        mangaForm.classList.remove("manga-form-appear");
+    } else {
+        mangaForm.classList.add("manga-form-appear");
+    }
+});

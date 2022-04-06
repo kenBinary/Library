@@ -40,12 +40,16 @@ body {
 
 .manga-form {
   position: absolute;
-  display: flex;
   justify-self: center;
+  display: none;
   align-self: center;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
+}
+
+.manga-form-appear {
+  display: flex;
 }
 
 .form-inputs {
