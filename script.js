@@ -9,10 +9,6 @@ function Manga(title, author, chapters, volumes) {
 }
 
 function addMangatoLibrary(title, author, chapters, volumes) {
-    // var title = window.prompt("Enter your title: ");
-    // var author = window.prompt("Enter your author: ");
-    // var chapters = window.prompt("Enter your chapters: ");
-    // var volumes = window.prompt("Enter your volumes: ");
     const newManga = new Manga(title, author, chapters, volumes);
     myManga.push(newManga);
     addMangaToPage(newManga);

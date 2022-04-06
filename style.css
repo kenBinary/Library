@@ -2,23 +2,36 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  outline: 1px solid black;
+}
+
+@font-face {
+  font-family: CoolVetica;
+  src: url(assets/font/coolvetica/coolvetica\ rg.otf);
+}
+html {
+  font-family: CoolVetica;
 }
 
 body {
-  padding: 10px;
+  background-color: white;
   display: grid;
-  gap: 5px;
   min-height: 100vh;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: auto 1fr;
 }
 
 .header {
+  color: white;
+  background-color: #1768ac;
   grid-column: 1/-1;
+  height: 50px;
+  padding: 5px;
+  text-align: center;
 }
 
 .sidebar {
+  color: #03256c;
+  background-color: #2541b2;
   display: grid;
   padding: 10px;
   gap: 10px;
@@ -26,32 +39,55 @@ body {
   grid-template-rows: 320px 35px 35px;
 }
 .sidebar .book-info {
+  background-color: #06bee1;
+  border-radius: 5px;
+  padding: 10px;
   grid-column: 1/-1;
 }
 .sidebar :nth-child(4) {
   grid-column: 1/-1;
 }
+.sidebar button {
+  background-color: #06bee1;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  border: 1px solid #03256c;
+}
+.sidebar button:hover {
+  color: white;
+  background-color: rgba(3, 37, 108, 0.5);
+}
 
 .content-container {
+  background-color: #06bee1;
   display: grid;
   padding: 40px;
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 220px;
 }
+.content-container div {
+  background-color: #1768ac;
+  border: 2px solid #03256c;
+  border-radius: 10px;
+}
 
 .manga-form {
+  color: #06bee1;
+  background-color: #1768ac;
   position: absolute;
+  top: 30vh;
   justify-self: center;
   display: none;
   align-self: center;
-  border: 1px solid black;
+  border: 2px solid #03256c;
   border-radius: 5px;
   padding: 10px;
 }
 
 .manga-form-appear {
-  display: flex;
+  display: block;
 }
 
 .form-inputs {
@@ -92,9 +128,22 @@ body {
 .form-inputs :last-child button {
   width: 120px;
   height: 30px;
+  background-color: #06bee1;
+  border: 2px solid #03256c;
+  border-radius: 7px;
+}
+.form-inputs :last-child button:hover {
+  font-weight: bold;
+  color: white;
+  background-color: rgba(3, 37, 108, 0.5);
 }
 .form-inputs input {
+  border-radius: 10px;
   padding-left: 10px;
+}
+
+.content-card {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
