@@ -1,7 +1,3 @@
-//take input from user
-//take that input and push it to array
-
-
 let myManga = [];
 
 function Manga(title, author, chapters, volumes) {
@@ -9,13 +5,14 @@ function Manga(title, author, chapters, volumes) {
     this.author = author;
     this.chapters = chapters;
     this.volumes = volumes;
+    this.finished = false;
 }
 
-function addMangatoLibrary() {
-    var title = window.prompt("Enter your title: ");
-    var author = window.prompt("Enter your author: ");
-    var chapters = window.prompt("Enter your chapters: ");
-    var volumes = window.prompt("Enter your volumes: ");
+function addMangatoLibrary(title, author, chapters, volumes) {
+    // var title = window.prompt("Enter your title: ");
+    // var author = window.prompt("Enter your author: ");
+    // var chapters = window.prompt("Enter your chapters: ");
+    // var volumes = window.prompt("Enter your volumes: ");
     const newManga = new Manga(title, author, chapters, volumes);
     myManga.push(newManga);
     addMangaToPage(newManga);
@@ -48,4 +45,13 @@ addMangaButton.addEventListener('click', () => {
     } else {
         mangaForm.classList.add("manga-form-appear");
     }
+});
+
+const addNewManga = document.querySelector(".add-manga-button");
+addNewManga.addEventListener("click", () => {
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const chapters = document.querySelector("#chapters");
+    const volumes = document.querySelector("#volumes");
+    addMangatoLibrary(title.value, author.value, chapters.value, volumes.value);
 });
