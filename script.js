@@ -18,5 +18,24 @@ function addMangatoLibrary() {
     var volumes = window.prompt("Enter your volumes: ");
     const newManga = new Manga(title, author, chapters, volumes);
     myManga.push(newManga);
+    addMangaToPage(newManga);
     // do stuff here
+}
+
+
+
+function addMangaToPage(object) {
+    const content = document.querySelector(".content-container");
+    const div = document.createElement("div");
+    div.textContent = object.title + object.author + object.chapters + object.volumes;
+    content.appendChild(div);
+}
+
+function addAllMangaToPage() {
+    myManga.forEach(element => {
+        const content = document.querySelector(".content-container");
+        const div = document.createElement("div");
+        div.textContent = object.title + object.author + object.chapters + object.volumes;
+        content.appendChild(div);
+    });
 }

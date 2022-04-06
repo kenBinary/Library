@@ -1,11 +1,11 @@
 * {
   margin: 0px;
   padding: 0px;
-  outline: 1px solid green;
   box-sizing: border-box;
 }
 
 body {
+  padding: 10px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: 1fr 4fr;
@@ -36,6 +36,59 @@ body {
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 220px;
+}
+
+.manga-form {
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-inputs {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 30px;
+  text-align: center;
+}
+.form-inputs :nth-child(1),
+.form-inputs :nth-child(2),
+.form-inputs :nth-child(3),
+.form-inputs :nth-child(4) {
+  grid-column: 1/-1;
+}
+.form-inputs :nth-child(1),
+.form-inputs :nth-child(3),
+.form-inputs :nth-child(5),
+.form-inputs :nth-child(7) {
+  align-self: end;
+}
+.form-inputs :nth-child(5) {
+  grid-column: 1/2;
+}
+.form-inputs :nth-child(7) {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+.form-inputs :nth-child(odd) {
+  align-items: baseline;
+}
+.form-inputs :last-child {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-inputs :last-child button {
+  width: 120px;
+  height: 30px;
+}
+.form-inputs input {
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
