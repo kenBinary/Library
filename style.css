@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  letter-spacing: 1px;
 }
 
 @font-face {
@@ -144,6 +145,25 @@ body {
 
 .content-card {
   padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.content-card h4 {
+  grid-column: 1/-1;
+}
+.content-card button:first-of-type {
+  grid-column: 1/2;
+}
+.content-card button {
+  background-color: #06bee1;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  border: 1px solid #03256c;
+}
+.content-card button:hover {
+  color: white;
+  background-color: rgba(3, 37, 108, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */
