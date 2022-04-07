@@ -12,8 +12,6 @@ function addMangatoLibrary(title, author, chapters, volumes) {
     const newManga = new Manga(title, author, chapters, volumes);
     myManga.push(newManga);
     addMangaToPage(newManga);
-    // createContentCard();
-    // do stuff here
 }
 
 
@@ -60,8 +58,8 @@ function addAllMangaToPage() {
     });
 }
 
-const addMangaButton = document.querySelector(".add-new-manga");
-addMangaButton.addEventListener('click', showForm);
+const addNewMangaButton = document.querySelector(".add-new-manga");
+addNewMangaButton.addEventListener('click', showForm);
 
 function showForm() {
     const mangaForm = document.querySelector(".manga-form");

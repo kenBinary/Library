@@ -80,7 +80,7 @@ body {
   position: absolute;
   top: 30vh;
   justify-self: center;
-  display: none;
+  display: block;
   align-self: center;
   border: 2px solid #03256c;
   border-radius: 5px;
@@ -98,49 +98,47 @@ body {
   grid-auto-rows: 30px;
   text-align: center;
 }
-.form-inputs :nth-child(1),
-.form-inputs :nth-child(2),
-.form-inputs :nth-child(3),
-.form-inputs :nth-child(4) {
+.form-inputs label[for=title],
+.form-inputs label[for=author] {
   grid-column: 1/-1;
 }
-.form-inputs :nth-child(1),
-.form-inputs :nth-child(3),
-.form-inputs :nth-child(5),
-.form-inputs :nth-child(7) {
-  align-self: end;
+.form-inputs input[id=title],
+.form-inputs input[id=author] {
+  grid-column: 1/-1;
 }
-.form-inputs :nth-child(5) {
+.form-inputs label[for=chapters] {
   grid-column: 1/2;
 }
-.form-inputs :nth-child(7) {
-  grid-column: 2/3;
-  grid-row: 5/6;
+.form-inputs input[id=chapters] {
+  grid-row: 6/7;
 }
-.form-inputs :nth-child(odd) {
-  align-items: baseline;
+.form-inputs label {
+  align-self: end;
 }
-.form-inputs :last-child {
+.form-inputs input {
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.new-manga-options {
   grid-column: 1/-1;
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
   align-items: center;
+  gap: 10px;
 }
-.form-inputs :last-child button {
+.new-manga-options button {
   width: 120px;
   height: 30px;
   background-color: #06bee1;
   border: 2px solid #03256c;
   border-radius: 7px;
 }
-.form-inputs :last-child button:hover {
+.new-manga-options button:hover {
   font-weight: bold;
   color: white;
   background-color: rgba(3, 37, 108, 0.5);
-}
-.form-inputs input {
-  border-radius: 10px;
-  padding-left: 10px;
 }
 
 .content-card {
