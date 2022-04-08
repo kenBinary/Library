@@ -80,7 +80,7 @@ body {
   position: absolute;
   top: 30vh;
   justify-self: center;
-  display: block;
+  display: none;
   align-self: center;
   border: 2px solid #03256c;
   border-radius: 5px;
@@ -166,6 +166,11 @@ body {
 .content-card button:hover {
   color: white;
   background-color: rgba(3, 37, 108, 0.5);
+}
+
+.is-finished {
+  border: 1px solid green !important;
+  background-color: lightgreen !important;
 }
 
 /*# sourceMappingURL=style.css.map */

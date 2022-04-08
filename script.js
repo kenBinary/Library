@@ -1,15 +1,15 @@
 let myManga = [];
 
-function Manga(title, author, chapters, volumes) {
+function Manga(title, author, chapters, volumes, finished) {
     this.title = title;
     this.author = author;
     this.chapters = chapters;
     this.volumes = volumes;
-    this.finished = false;
+    this.finished = finished;
 }
 
-function addMangatoLibrary(title, author, chapters, volumes) {
-    const newManga = new Manga(title, author, chapters, volumes);
+function addMangatoLibrary(title, author, chapters, volumes, finished) {
+    const newManga = new Manga(title, author, chapters, volumes, finished);
     myManga.push(newManga);
     addMangaToPage(newManga);
 }
@@ -34,7 +34,7 @@ function addMangaToPage(object) {
     heading4.textContent = `Volumes: ${object.volumes}`;
     div.appendChild(heading4);
     const heading5 = document.createElement("h4");
-    heading5.textContent = `Read: Yes`;
+    heading5.textContent = `Read: ${object.finished? "yes":"no"}`;
     div.appendChild(heading5);
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
@@ -42,9 +42,27 @@ function addMangaToPage(object) {
     removeButton.addEventListener('click', (e) => {
         console.log(e.target.parentElement.remove());
     });
+
     div.appendChild(removeButton);
+    div.dataset.title = `${object.title}`;
     const finishButton = document.createElement("button");
     finishButton.classList.add("finished-button");
+
+    finishButton.addEventListener('click', () => {
+        if (finishButton.classList.contains("is-finished")) {
+            finishButton.classList.remove("is-finished")
+        } else {
+            finishButton.classList.add("is-finished")
+        }
+    });
+
+
+
+
+
+
+
+
     finishButton.textContent = "Finished";
     div.appendChild(finishButton);
 }
@@ -77,6 +95,21 @@ addNewManga.addEventListener("click", () => {
     const author = document.querySelector("#author");
     const chapters = document.querySelector("#chapters");
     const volumes = document.querySelector("#volumes");
-    addMangatoLibrary(title.value, author.value, chapters.value, volumes.value);
+    const hasRead = document.querySelector("#is-finished");
+    console.log(hasRead.checked);
+    addMangatoLibrary(title.value, author.value, chapters.value, volumes.value, hasRead.checked);
+    title.value = "";
+    author.value = "";
+    chapters.classList = "";
+    volumes.value = "";
+    chapters.value = "";
+    hasRead.checked = false;
     showForm();
+});
+const removeAll = document.querySelector(".remove-all");
+removeAll.addEventListener("click", () => {
+    const cards = document.querySelectorAll(".content-card");
+    cards.forEach((element) => {
+        element.remove();
+    });
 });
