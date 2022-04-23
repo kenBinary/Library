@@ -1,11 +1,13 @@
 let myManga = [];
 
-function Manga(title, author, chapters, volumes, finished) {
-    this.title = title;
-    this.author = author;
-    this.chapters = chapters;
-    this.volumes = volumes;
-    this.finished = finished;
+class Manga {
+    constructor(title, author, chapters, volumes, finished) {
+        this.title = title;
+        this.author = author;
+        this.chapters = chapters;
+        this.volumes = volumes;
+        this.finished = finished;
+    }
 }
 
 function addMangatoLibrary(title, author, chapters, volumes, finished) {
